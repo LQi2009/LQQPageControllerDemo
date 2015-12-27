@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LQQContentViewController">
+            <connections>
+                <outlet property="LQQ_imageView" destination="a78-V6-8Np" id="ZVt-hI-B0r"/>
+                <outlet property="view" destination="yfD-Jc-3MH" id="bod-Ql-yRD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yfD-Jc-3MH">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a78-V6-8Np">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="a78-V6-8Np" secondAttribute="bottom" id="7jd-Gf-zZk"/>
+                <constraint firstItem="a78-V6-8Np" firstAttribute="top" secondItem="yfD-Jc-3MH" secondAttribute="top" id="aen-s9-6D2"/>
+                <constraint firstItem="a78-V6-8Np" firstAttribute="leading" secondItem="yfD-Jc-3MH" secondAttribute="leading" id="hB2-It-url"/>
+                <constraint firstAttribute="trailing" secondItem="a78-V6-8Np" secondAttribute="trailing" id="pW0-CM-Re4"/>
+            </constraints>
+            <point key="canvasLocation" x="300" y="345"/>
+        </view>
+    </objects>
+</document>
