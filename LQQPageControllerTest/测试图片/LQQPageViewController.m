@@ -12,7 +12,7 @@
  *
  *  因为需要翻转视图90°,如果不使用xib,而且使用view.frame CGRectMake ,会使视图显示不正常
  
- *  所以可以选择使用xib,或者masonry添加约束
+ *  所以可以选择使用xib,或者masonry添加约束也可
  *
  *  @return return value description
  */
@@ -21,7 +21,7 @@
 #import "LQQPageViewController.h"
 #import "LQQContentViewController.h"
 
-@interface LQQPageViewController ()<UIPageViewControllerDataSource>
+@interface LQQPageViewController ()<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @property (nonatomic,retain) UIPageViewController *LQQ_pageViewController;
 
@@ -63,7 +63,6 @@
     [leftBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:leftBtn];
 }
-
 //返回按钮点击事件
 -(void)backBtnClick
 {
@@ -92,6 +91,7 @@
 //    self.LQQ_pageViewController.doubleSided = NO;
     
     self.LQQ_pageViewController.dataSource = self;
+    self.LQQ_pageViewController.delegate = self;
     
     LQQContentViewController * initialViewController = [self viewCintrollerAtIndex:0];
     LQQContentViewController * endViewController = [self viewCintrollerAtIndex:1];
@@ -168,6 +168,27 @@
     return [self viewCintrollerAtIndex:index];
 }
 
+/**
+ *  @author LQQ, 16-12-28 14:12:32
+ *
+ *  在点击翻页过快时会出现,控制台输出:Unbalanced calls to begin/end appearance transitions for <LQQContentViewController: 0x7fe4e2e35e20>
+ *
+ *  这是因为上一个控制器的动画还未完成,就开始了下一个控制器的动画
+ *  解决的方法是在上一个控制器动画的时候,暂时关闭视图的交互性,在动画结束后再打开
+ *  主要用到了他的下面两个代理方法
+ */
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
+{
+    // 将要开始动画的时候关闭视图的交互性
+    pageViewController.view.userInteractionEnabled = NO;
+}
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    //动画结束后打开交互
+    if (finished) {
+        pageViewController.view.userInteractionEnabled = YES;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
