@@ -15,8 +15,6 @@
 		9171B5391C2E90D200F25563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9171B5371C2E90D200F25563 /* LaunchScreen.storyboard */; };
 		9171B5441C2E90D200F25563 /* LQQPageControllerTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9171B5431C2E90D200F25563 /* LQQPageControllerTestTests.m */; };
 		9171B54F1C2E90D200F25563 /* LQQPageControllerTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9171B54E1C2E90D200F25563 /* LQQPageControllerTestUITests.m */; };
-		9171B5691C2E93C400F25563 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9171B5661C2E93C400F25563 /* ContentViewController.m */; };
-		9171B56A1C2E93C400F25563 /* PhotoReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9171B5681C2E93C400F25563 /* PhotoReviewViewController.m */; };
 		9171B5741C2E94B300F25563 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9171B56C1C2E94B300F25563 /* 1.jpg */; };
 		9171B5751C2E94B300F25563 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9171B56D1C2E94B300F25563 /* 2.jpg */; };
 		9171B5761C2E94B300F25563 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9171B56E1C2E94B300F25563 /* 3.jpg */; };
@@ -64,10 +62,6 @@
 		9171B54A1C2E90D200F25563 /* LQQPageControllerTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LQQPageControllerTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9171B54E1C2E90D200F25563 /* LQQPageControllerTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LQQPageControllerTestUITests.m; sourceTree = "<group>"; };
 		9171B5501C2E90D200F25563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9171B5651C2E93C400F25563 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
-		9171B5661C2E93C400F25563 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
-		9171B5671C2E93C400F25563 /* PhotoReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoReviewViewController.h; sourceTree = "<group>"; };
-		9171B5681C2E93C400F25563 /* PhotoReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoReviewViewController.m; sourceTree = "<group>"; };
 		9171B56C1C2E94B300F25563 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		9171B56D1C2E94B300F25563 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		9171B56E1C2E94B300F25563 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
@@ -136,7 +130,7 @@
 				9171B52F1C2E90D200F25563 /* ViewController.h */,
 				9171B5301C2E90D200F25563 /* ViewController.m */,
 				9171B56B1C2E94B300F25563 /* 测试图片 */,
-				9171B5641C2E93C400F25563 /* photoPageController */,
+				9171B57C1C2E9F8300F25563 /* LQQPhotoPageView */,
 				9171B5321C2E90D200F25563 /* Main.storyboard */,
 				9171B5351C2E90D200F25563 /* Assets.xcassets */,
 				9171B5371C2E90D200F25563 /* LaunchScreen.storyboard */,
@@ -172,17 +166,6 @@
 			path = LQQPageControllerTestUITests;
 			sourceTree = "<group>";
 		};
-		9171B5641C2E93C400F25563 /* photoPageController */ = {
-			isa = PBXGroup;
-			children = (
-				9171B5651C2E93C400F25563 /* ContentViewController.h */,
-				9171B5661C2E93C400F25563 /* ContentViewController.m */,
-				9171B5671C2E93C400F25563 /* PhotoReviewViewController.h */,
-				9171B5681C2E93C400F25563 /* PhotoReviewViewController.m */,
-			);
-			path = photoPageController;
-			sourceTree = "<group>";
-		};
 		9171B56B1C2E94B300F25563 /* 测试图片 */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +177,6 @@
 				9171B5711C2E94B300F25563 /* 33.jpg */,
 				9171B5721C2E94B300F25563 /* rr.jpg */,
 				9171B5731C2E94B300F25563 /* 88.jpg */,
-				9171B57C1C2E9F8300F25563 /* LQQPhotoPageView */,
 			);
 			path = "测试图片";
 			sourceTree = "<group>";
@@ -209,6 +191,7 @@
 				9171B5831C2EAC8000F25563 /* LQQContentViewController.xib */,
 			);
 			name = LQQPhotoPageView;
+			path = "测试图片";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9171B5311C2E90D200F25563 /* ViewController.m in Sources */,
-				9171B5691C2E93C400F25563 /* ContentViewController.m in Sources */,
 				9171B5821C2EA05600F25563 /* LQQContentViewController.m in Sources */,
 				9171B57F1C2EA03C00F25563 /* LQQPageViewController.m in Sources */,
 				9171B52E1C2E90D200F25563 /* AppDelegate.m in Sources */,
 				9171B52B1C2E90D200F25563 /* main.m in Sources */,
-				9171B56A1C2E93C400F25563 /* PhotoReviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +563,7 @@
 				9171B5551C2E90D200F25563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9171B5561C2E90D200F25563 /* Build configuration list for PBXNativeTarget "LQQPageControllerTestTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +572,7 @@
 				9171B5581C2E90D200F25563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9171B5591C2E90D200F25563 /* Build configuration list for PBXNativeTarget "LQQPageControllerTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +581,7 @@
 				9171B55B1C2E90D200F25563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
